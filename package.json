@@ -1,5 +1,5 @@
 {
-  "name": "RCTRefreshControl",
+  "name": "react-refresh-control",
   "version": "1.0.0",
   "description": "A pull to refresh control for react native.",
   "main": "RCTRefreshControl.js",
