@@ -1,12 +1,13 @@
 {
   "name": "react-refresh-control",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A pull to refresh control for react native.",
   "main": "RCTRefreshControl.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "react-component",
     "Refresh",
     "Control"
   ],
@@ -18,15 +19,5 @@
   },
   "dependencies": {
     "react-tween-state": "0.0.5"
-  },
-  "react-component": {
-    "name": "react-refresh-control",
-    "keywords": [
-      "Refresh",
-      "Control"
-    ],
-    "dependencies": {
-      "react-tween-state": "0.0.5"
-    }
   }
 }
