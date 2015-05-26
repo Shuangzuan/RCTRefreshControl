@@ -2,7 +2,7 @@
 
 A pull to refresh control for react native.
 
-![Demo](demo.gif)
+![Example](example.gif)
 
 ## Installation
 
@@ -110,12 +110,14 @@ AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 
 The following configs are used:
 
+```javascript
 this.configureRefreshControl({
   pullToRefreshText: 'Pull down',
   releaseToRefreshingText: 'Release',
   refreshingText: 'Loading...',  
   beginRefreshing: () => {}
 });
+```
 
 ---
 
