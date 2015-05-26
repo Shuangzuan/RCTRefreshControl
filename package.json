@@ -12,6 +12,10 @@
   ],
   "author": "Shuangzuan",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Shuangzuan/RCTRefreshControl.git"
+  },
   "dependencies": {
     "react-tween-state": "0.0.5"
   }
