@@ -7,6 +7,8 @@ A pull to refresh control for react native.
 - ScrollView
 - ListView
 
+## Example
+
 ![Example](example.gif)
 
 ## Installation
