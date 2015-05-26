@@ -2,6 +2,11 @@
 
 A pull to refresh control for react native.
 
+## Support
+
+- ScrollView
+- ListView
+
 ![Example](example.gif)
 
 ## Installation
