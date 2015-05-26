@@ -53,7 +53,6 @@ var RefreshControlMixin = {
   endRefreshing: function() {
     this.setState({
       refresh: RefreshControlState.PullToRefresh,
-      // marginTop: -this.props.distance,
       arrowOrientation: 'Down'
     });
 
@@ -81,15 +80,12 @@ var RefreshControlMixin = {
     this.setState({arrowOrientation: orientation});
 
     Animation.startAnimation({
-      node: this.refs.arrow,
+      node: this.refs.arrow ? this.refs.arrow : this.refs.scrollView.refs.arrow,
       duration: 200,
       easing: 'easeInQuad',
       property: 'rotation',
       toValue: orientation === 'Up' ? Math.PI : 2 * Math.PI,
-    }, (finished) => {
-      
     });
-    
   },
   _onScroll: function(event) {
     var distance = -event.nativeEvent.contentOffset.y - event.nativeEvent.contentInset.top;
@@ -118,7 +114,7 @@ var RefreshControlMixin = {
     };
 
     return (
-      <View ref='refreshControl' style={[styles.refreshControlContainer, style]}>
+      <View style={[styles.refreshControlContainer, style]}>
         <View style={{flex: 1.3}} />
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
           {this._iconView(this.state.refresh)}

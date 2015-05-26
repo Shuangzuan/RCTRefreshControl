@@ -2,17 +2,17 @@
 
 A pull to refresh control for react native.
 
-![Demo](Demo.gif)
+![Demo](demo.gif)
 
 ## Installation
 
-1. Run `npm install react-refresh-control --save`
-2. Open your project in Xcode, right click on `Libraries` and click `Add Files to "Your Project Name"` then choose the `RCTAnimationExperimental.xcodeproj`
-3. Add `libRCTAnimationExperimental.a` to `Build Phases -> Link Binary With Libraries`
-3. Add `var RefreshControl = require('react-refresh-control');`
-4. Add `mixins: [RefreshControl.Mixin]`
+1. Run `npm install react-refresh-control --save`.
+2. Open your project in Xcode, right click on `Libraries` and click `Add Files to "Your Project Name"` then choose the `RCTAnimationExperimental.xcodeproj`.
+3. Add `libRCTAnimationExperimental.a` to `Build Phases -> Link Binary With Libraries`.
+4. Add `var RefreshControl = require('react-refresh-control');` to your code.
+5. Add `mixins: [RefreshControl.Mixin]` to your code.
 
-## Usage
+## Usage for ScrollView
 
 ```javascript
 'use strict';
@@ -49,12 +49,6 @@ var AwesomeProject = React.createClass({
         <View style={{backgroundColor: 'white', height: 100}} />
         <View style={{backgroundColor: 'black', height: 100}} />
         <View style={{backgroundColor: 'purple', height: 100}} />
-        <View style={{backgroundColor: 'orange', height: 100}} />
-        <View style={{backgroundColor: 'blue', height: 100}} />
-        <View style={{backgroundColor: 'gray', height: 100}} />
-        <View style={{backgroundColor: 'white', height: 100}} />
-        <View style={{backgroundColor: 'black', height: 100}} />
-        <View style={{backgroundColor: 'purple', height: 100}} />
       </ScrollView>
     );
   }
@@ -63,13 +57,65 @@ var AwesomeProject = React.createClass({
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
 ```
 
-## Props
+## Usage for ListView
 
-The following properties are used:
+```javascript
+'use strict';
 
-- **`pullToRefreshText`** _(String)_
-- **`releaseToRefreshingText`** _(String)_
-- **`refreshingText`** _(String)_
+var React = require('react-native');
+var TimerMixin = require('react-timer-mixin');
+var RefreshControl = require('react-refresh-control');
+var {
+  AppRegistry,
+  ListView,
+  StyleSheet,
+  Text,
+  View,
+} = React;
+
+var AwesomeProject = React.createClass({
+  mixins: [TimerMixin, RefreshControl.Mixin],
+  getInitialState: function() {
+    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    return {
+      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
+    };
+  },
+  componentDidMount: function() {
+    this.configureRefreshControl({
+      beginRefreshing: () => {
+        this.setTimeout(() => {
+          this.endRefreshing();
+        }, 3000);
+      }
+    });
+  },
+  render: function() {
+    return (
+      <ListView
+        style={{marginTop: 20}}
+        dataSource={this.state.dataSource}
+        renderRow={(rowData) => <Text>{rowData}</Text>}
+        renderHeader={this.refreshControl}
+        {...this.refreshControlProps()}
+      />
+    );
+  }
+});
+
+AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+```
+
+## Configure
+
+The following configs are used:
+
+this.configureRefreshControl({
+  pullToRefreshText: 'Pull down',
+  releaseToRefreshingText: 'Release',
+  refreshingText: 'Loading...',  
+  beginRefreshing: () => {}
+});
 
 ---
 
