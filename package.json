@@ -18,5 +18,15 @@
   },
   "dependencies": {
     "react-tween-state": "0.0.5"
+  },
+  "react-component": {
+    "name": "react-refresh-control",
+    "keywords": [
+      "Refresh",
+      "Control"
+    ],
+    "dependencies": {
+      "react-tween-state": "0.0.5"
+    }
   }
 }
