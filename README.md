@@ -2,13 +2,15 @@
 
 A pull to refresh control for react native.
 
+![Demo](Demo.gif)
+
 ## Installation
 
 1. Run `npm install react-refresh-control --save`
-2. Open your project in Xcode, right click on `Libraries` and click `Add Files to "Your Project Name"` then choose the `RCTAnimationExperimental.xcodeproj`.
-3. Add `libRCTAnimationExperimental.a` to `Build Phases -> Link Binary With Libraries`.
-3. `var RefreshControl = require('react-refresh-control');`
-4. Add `mixins: [RefreshControl.Mixin]`.
+2. Open your project in Xcode, right click on `Libraries` and click `Add Files to "Your Project Name"` then choose the `RCTAnimationExperimental.xcodeproj`
+3. Add `libRCTAnimationExperimental.a` to `Build Phases -> Link Binary With Libraries`
+3. Add `var RefreshControl = require('react-refresh-control');`
+4. Add `mixins: [RefreshControl.Mixin]`
 
 ## Usage
 
