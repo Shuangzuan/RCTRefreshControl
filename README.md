@@ -1,129 +1,100 @@
 # RCTRefreshControl
 
-A pull to refresh control for react native.
+A pull down to refresh control for react native.
 
-## Support
+## Screen Shot
 
-- ScrollView
-- ListView
-
-## Example
-
-![Example](example.gif)
+![Screen Shot](screen-shot.gif)
 
 ## Installation
 
-1. Run `npm install react-refresh-control --save`.
-2. Open your project in Xcode, right click on `Libraries` and click `Add Files to "Your Project Name"` then choose the `RCTAnimationExperimental.xcodeproj`.
-3. Add `libRCTAnimationExperimental.a` to `Build Phases -> Link Binary With Libraries`.
-4. Add `var RefreshControl = require('react-refresh-control');` to your code.
-5. Add `mixins: [RefreshControl.Mixin]` to your code.
+1. Run `npm install react-refresh-control --save` in your project directory.
+2. Drag `RCTRefreshControl.xcodeproj` to your project on Xcode.
+3. Click on your main project file (the one that represents the .xcodeproj) select Build Phases and drag `libRCTRefreshControl.a` from the Products folder inside the `RCTRefreshControl.xcodeproj`.
+4. Add `var RCTRefreshControl = require('RCTRefreshControl');` to your code.
 
-## Usage for ScrollView
+## Usage
 
 ```javascript
 'use strict';
 
 var React = require('react-native');
 var TimerMixin = require('react-timer-mixin');
-var RefreshControl = require('react-refresh-control');
+var RCTRefreshControl = require('RCTRefreshControl');
 var {
   AppRegistry,
+  ListView,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } = React;
 
-var AwesomeProject = React.createClass({
-  mixins: [TimerMixin, RefreshControl.Mixin],
-  componentDidMount: function() {
-    this.configureRefreshControl({
-      beginRefreshing: () => {
-        this.setTimeout(() => {
-          this.endRefreshing();
-        }, 3000);
-      }
-    });
-  },
-  render: function() {
-    return (
-      <ScrollView style={{marginTop: 20}} {...this.refreshControlProps()}>
-        {this.refreshControl()}
-        <View style={{backgroundColor: 'orange', height: 100}} />
-        <View style={{backgroundColor: 'blue', height: 100}} />
-        <View style={{backgroundColor: 'gray', height: 100}} />
-        <View style={{backgroundColor: 'white', height: 100}} />
-        <View style={{backgroundColor: 'black', height: 100}} />
-        <View style={{backgroundColor: 'purple', height: 100}} />
-      </ScrollView>
-    );
-  }
-});
+var SCROLLVIEW = 'ScrollView';
+var LISTVIEW = 'ListView';
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
-```
-
-## Usage for ListView
-
-```javascript
-'use strict';
-
-var React = require('react-native');
-var TimerMixin = require('react-timer-mixin');
-var RefreshControl = require('react-refresh-control');
-var {
-  AppRegistry,
-  ListView,
-  StyleSheet,
-  Text,
-  View,
-} = React;
-
-var AwesomeProject = React.createClass({
-  mixins: [TimerMixin, RefreshControl.Mixin],
+var RCTRefreshControlDemo = React.createClass({
+  mixins: [TimerMixin],
   getInitialState: function() {
     var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
+      dataSource: ds.cloneWithRows(['#484848', '#2F9C0A', '#05A5D1']),
     };
   },
   componentDidMount: function() {
-    this.configureRefreshControl({
-      beginRefreshing: () => {
-        this.setTimeout(() => {
-          this.endRefreshing();
-        }, 3000);
-      }
+    // ScrollView
+    RCTRefreshControl.configure({
+      node: this.refs[SCROLLVIEW],
+      tintColor: '#05A5D1',
+      activityIndicatorViewColor: '#05A5D1'
+    }, () => {
+      this.setTimeout(() => {
+        RCTRefreshControl.endRefreshing(this.refs[SCROLLVIEW]);
+      }, 2000);
+    });
+    
+    // ListView
+    RCTRefreshControl.configure({
+      node: this.refs[LISTVIEW]
+    }, () => {
+      this.setTimeout(() => {
+        RCTRefreshControl.endRefreshing(this.refs[LISTVIEW]);
+      }, 2000);
     });
   },
   render: function() {
     return (
-      <ListView
-        style={{marginTop: 20}}
-        dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
-        renderHeader={this.refreshControl}
-        {...this.refreshControlProps()}
-      />
+      <View style={styles.container}>
+        <ScrollView ref={SCROLLVIEW} style={styles.scrollView}>
+          <View style={{backgroundColor: '#05A5D1', height: 200}} />
+          <View style={{backgroundColor: '#FDF3E7', height: 200}} />
+          <View style={{backgroundColor: '#484848', height: 200}} />
+        </ScrollView>
+
+        <ListView
+          ref={LISTVIEW}
+          style={styles.listView}
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => {
+            var color = rowData;
+            return (
+              <View style={{backgroundColor: color, height: 200}} />
+            );
+          }}
+        />
+      </View>
     );
   }
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
-```
-
-## Configure
-
-The following configs are used:
-
-```javascript
-this.configureRefreshControl({
-  pullToRefreshText: 'Pull down',
-  releaseToRefreshingText: 'Release',
-  refreshingText: 'Loading...',  
-  beginRefreshing: () => {}
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row'
+  }
 });
+
+AppRegistry.registerComponent('RCTRefreshControlDemo', () => RCTRefreshControlDemo);
 ```
 
 ---
