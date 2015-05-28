@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13BE3DEE1AC21097009241FE /* RCTRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 13BE3DED1AC21097009241FE /* RCTRefreshControl.m */; };
+		14C16EF51B16176C00BB689B /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C16EF41B16176C00BB689B /* ODRefreshControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +27,8 @@
 		134814201AA4EA6300B7C361 /* libRCTRefreshControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTRefreshControl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		13BE3DEC1AC21097009241FE /* RCTRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTRefreshControl.h; sourceTree = "<group>"; };
 		13BE3DED1AC21097009241FE /* RCTRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTRefreshControl.m; sourceTree = "<group>"; };
+		14C16EF31B16176C00BB689B /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		14C16EF41B16176C00BB689B /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,11 +50,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		14C16EF21B16176C00BB689B /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				14C16EF31B16176C00BB689B /* ODRefreshControl.h */,
+				14C16EF41B16176C00BB689B /* ODRefreshControl.m */,
+			);
+			name = ODRefreshControl;
+			path = ODRefreshControl/ODRefreshControl;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
 				13BE3DEC1AC21097009241FE /* RCTRefreshControl.h */,
 				13BE3DED1AC21097009241FE /* RCTRefreshControl.m */,
+				14C16EF21B16176C00BB689B /* ODRefreshControl */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C16EF51B16176C00BB689B /* ODRefreshControl.m in Sources */,
 				13BE3DEE1AC21097009241FE /* RCTRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
