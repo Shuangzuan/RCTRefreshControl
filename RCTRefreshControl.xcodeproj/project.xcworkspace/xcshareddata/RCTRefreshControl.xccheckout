@@ -12,6 +12,8 @@
 	<dict>
 		<key>0BCE712030F8A42B334E9CFA6081352FDFF54C76</key>
 		<string>https://github.com/Shuangzuan/RCTRefreshControl.git</string>
+		<key>C18D10292567FB7B676BADDDA11BE939E2AEEC91</key>
+		<string>https://github.com/Sephiroth87/ODRefreshControl.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>RCTRefreshControl.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>0BCE712030F8A42B334E9CFA6081352FDFF54C76</key>
 		<string>../..</string>
+		<key>C18D10292567FB7B676BADDDA11BE939E2AEEC91</key>
+		<string>../../ODRefreshControl/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/Shuangzuan/RCTRefreshControl.git</string>
@@ -28,6 +32,14 @@
 	<string>0BCE712030F8A42B334E9CFA6081352FDFF54C76</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C18D10292567FB7B676BADDDA11BE939E2AEEC91</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ODRefreshControl</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
