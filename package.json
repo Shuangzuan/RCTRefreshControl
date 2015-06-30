@@ -12,7 +12,7 @@
   "author": "Shuangzuan",
   "license": "MIT",
   "dependencies": {
-    "react-native": "^0.4.4"
+    "react-native": "^0.6.0"
   },
   "repository": {
     "type": "git",
