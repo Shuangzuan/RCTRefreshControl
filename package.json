@@ -11,9 +11,6 @@
   ],
   "author": "Shuangzuan",
   "license": "MIT",
-  "dependencies": {
-    "react-native": "^0.4.4"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com:Shuangzuan/RCTRefreshControl.git"
