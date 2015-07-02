@@ -5,10 +5,11 @@
 'use strict';
 
 var React = require('react-native');
-var NativeRCTRefreshControl = require('NativeModules').RefreshControl;
-var invariant = require('invariant');
 var {
-  DeviceEventEmitter
+  DeviceEventEmitter,
+  NativeModules: {
+    RefreshControl,
+  }
 } = React;
 
 /**
@@ -33,7 +34,7 @@ var RCTRefreshControl = {
       activityIndicatorViewColor: configs.activityIndicatorViewColor
     };
     
-    NativeRCTRefreshControl.configure(nodeHandle, options, (error) => {
+    RefreshControl.configure(nodeHandle, options, (error) => {
       if (!error) {
         callbacks[nodeHandle] = callback;
       }
@@ -41,7 +42,7 @@ var RCTRefreshControl = {
   },
   endRefreshing: function(node) {
     var nodeHandle = React.findNodeHandle(node);
-    NativeRCTRefreshControl.endRefreshing(nodeHandle);
+    RefreshControl.endRefreshing(nodeHandle);
   }
 };
 
