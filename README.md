@@ -20,14 +20,14 @@ A pull down to refresh control for react native.
 
 var React = require('react-native');
 var TimerMixin = require('react-timer-mixin');
-var RCTRefreshControl = require('RCTRefreshControl');
+var RCTRefreshControl = require('react-refresh-control');
 var {
   AppRegistry,
   ListView,
   ScrollView,
   StyleSheet,
   Text,
-  View,
+  View
 } = React;
 
 var SCROLLVIEW = 'ScrollView';
@@ -52,7 +52,7 @@ var RCTRefreshControlDemo = React.createClass({
         RCTRefreshControl.endRefreshing(this.refs[SCROLLVIEW]);
       }, 2000);
     });
-    
+
     // ListView
     RCTRefreshControl.configure({
       node: this.refs[LISTVIEW]
