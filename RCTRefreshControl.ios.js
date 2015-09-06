@@ -1,6 +1,6 @@
 /**
  * @providesModule RCTRefreshControl
- * @flow
+ * @flow-weak
  */
 'use strict';
 
