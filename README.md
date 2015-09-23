@@ -11,7 +11,7 @@ A pull down to refresh control for react native.
 1. Run `npm install react-refresh-control --save` in your project directory.
 2. Drag `RCTRefreshControl.xcodeproj` to your project on Xcode.
 3. Click on your main project file (the one that represents the .xcodeproj) select Build Phases and drag `libRCTRefreshControl.a` from the Products folder inside the `RCTRefreshControl.xcodeproj`.
-4. Add `var RCTRefreshControl = require('RCTRefreshControl');` to your code.
+4. Add `var RCTRefreshControl = require('react-refresh-control');` to your code.
 
 ## Usage
 
