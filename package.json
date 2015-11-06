@@ -1,7 +1,7 @@
 {
   "name": "react-refresh-control",
   "description": "A pull down to refresh control for react native.",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "keywords": [
     "react-component",
     "react-native",
@@ -10,16 +10,16 @@
     "control"
   ],
   "license": "MIT",
-  "main": "RCTRefreshControl.ios.js",
+  "main": "index.ios.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Shuangzuan/RCTRefreshControl.git"
+    "url": "git@github.com:DickyT/RCTRefreshControl.git"
   },
   "author": "Shuangzuan",
   "maintainers": [
     {
-      "name": "Shuangzuan",
-      "email": "shuangzuan.he@icloud.com"
+      "name": "DickyT",
+      "email": "me@idickyt.com"
     }
   ]
 }
