@@ -8,12 +8,12 @@ This project added a more user-friendly way to use this package, and I also fix 
 
 ## Installation
 
-1. Run `npm install DickyT/RCTRefreshControl --save` in your project directory.
+1. Run `npm install react-native-refresh-control --save` in your project directory.
 2. Drag `RCTRefreshControl.xcodeproj` to your project on Xcode.
 3. Click on your main project file (the one that represents the .xcodeproj) select Build Phases and drag `libRCTRefreshControl.a` from the Products folder inside the `RCTRefreshControl.xcodeproj`.
-4. Add `var RCTRefreshControl = require('react-refresh-control');` to your code.
+4. Add `var RCTRefreshControl = require('react-native-refresh-control');` to your code.
 
-__I am not going to add a sperate package into npm unless I get the authorization of [Shuangzuan](https://github.com/Shuangzuan)__
+__I will yield the package name once [Shuangzuan](https://github.com/Shuangzuan)requests __.
 
 ## Usage
 It is very easy to use, just use `RCTRefreshControl.ListView` as the `React.ListView`
