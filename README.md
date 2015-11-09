@@ -1,7 +1,7 @@
 # RCTRefreshControl
 [![npm version](https://badge.fury.io/js/react-native-refresh-control.svg)](https://badge.fury.io/js/react-native-refresh-control)
 
-A pull down to refresh control for react native. This project use a native-bridging way to implement the Pull-To-Refresh, absolutely **NO** jetter and lagging compared with those package which implemented using Javascript.
+A pull down to refresh control for react native. This project use a native-bridging way to implement the Pull-To-Refresh, absolutely **NO** jitter and lagging compared with those package which implemented using Javascript.
 
 This is a **forked** project from [Shuangzuan/RCTRefreshControl](https://github.com/Shuangzuan/RCTRefreshControl).
 This project added a more user-friendly way to use this package, and I also fix some bugs of the original project.
