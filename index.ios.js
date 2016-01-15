@@ -45,6 +45,10 @@ class RCTRefreshControlScrollView extends Component {
       </ScrollView>
     );
   }
+  
+  scrollTo(...args) {
+    this.refs[ELEMENT_ID].scrollTo(...args);
+  }
 }
 
 class RCTRefreshControlViewListView extends Component {
