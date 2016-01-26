@@ -1,5 +1,5 @@
 #import "RCTBridgeModule.h"
 
-@interface RCTRefreshControl : NSObject <RCTBridgeModule>
+@interface RCTRefresher : NSObject <RCTBridgeModule>
 
 @end

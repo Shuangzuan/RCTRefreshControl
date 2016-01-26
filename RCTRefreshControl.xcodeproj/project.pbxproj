@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		58B511DA1A9E6C8500147676 /* RCTRefreshControl */ = {
+		58B511DA1A9E6C8500147676 /* RCTRefresher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RCTRefreshControl" */;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RCTRefresher" */;
 			buildPhases = (
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
@@ -85,7 +85,7 @@
 			);
 			dependencies = (
 			);
-			name = RCTRefreshControl;
+			name = RCTRefresher;
 			productName = RCTDataManager;
 			productReference = 134814201AA4EA6300B7C361 /* libRCTRefreshControl.a */;
 			productType = "com.apple.product-type.library.static";
@@ -116,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58B511DA1A9E6C8500147676 /* RCTRefreshControl */,
+				58B511DA1A9E6C8500147676 /* RCTRefresher */,
 			);
 		};
 /* End PBXProject section */
@@ -219,7 +219,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RCTRefreshControl;
+				PRODUCT_NAME = RCTRefresher;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -235,7 +235,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = RCTRefreshControl;
+				PRODUCT_NAME = RCTRefresher;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -252,7 +252,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RCTRefreshControl" */ = {
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RCTRefresher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
