@@ -5,7 +5,6 @@
 #import "RCTBridge.h"
 #import "RCTConvert.h"
 #import "RCTScrollView.h"
-#import "RCTSparseArray.h"
 #import "RCTUIManager.h"
 #import "RCTEventDispatcher.h"
 
@@ -24,7 +23,7 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(configure:(nonnull NSNumber *)reactTag
                   options:(NSDictionary *)options
                   callback:(RCTResponseSenderBlock)callback) {
-  [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, RCTSparseArray *viewRegistry) {
+  [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary *viewRegistry) {
     
     UIView *view = viewRegistry[reactTag];
     if (!view) {
@@ -51,7 +50,7 @@ RCT_EXPORT_METHOD(configure:(nonnull NSNumber *)reactTag
 }
 
 RCT_EXPORT_METHOD(beginRefreshing:(nonnull NSNumber *)reactTag) {
-  [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, RCTSparseArray *viewRegistry) {
+  [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary *viewRegistry) {
     
     UIView *view = viewRegistry[reactTag];
     if (!view) {
@@ -70,7 +69,7 @@ RCT_EXPORT_METHOD(beginRefreshing:(nonnull NSNumber *)reactTag) {
 }
 
 RCT_EXPORT_METHOD(endRefreshing:(nonnull NSNumber *)reactTag) {
-  [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, RCTSparseArray *viewRegistry) {
+  [self.bridge.uiManager addUIBlock:^(RCTUIManager *uiManager, NSDictionary *viewRegistry) {
     
     UIView *view = viewRegistry[reactTag];
     if (!view) {
